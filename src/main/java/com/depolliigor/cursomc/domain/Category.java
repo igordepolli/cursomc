@@ -2,27 +2,35 @@ package com.depolliigor.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer idCategory;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 	private String name;
 	
 	public Category() {
 		
 	}
 
-	public Category(Integer idCategory, String name) {
-		this.idCategory = idCategory;
+	public Category(Integer id, String name) {
+		this.id = id;
 		this.name = name;
 	}
 
-	public Integer getIdCategory() {
-		return idCategory;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdCategory(Integer idCategory) {
-		this.idCategory = idCategory;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -37,7 +45,7 @@ public class Category implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((idCategory == null) ? 0 : idCategory.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -50,10 +58,10 @@ public class Category implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
-		if (idCategory == null) {
-			if (other.idCategory != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!idCategory.equals(other.idCategory))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
