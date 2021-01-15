@@ -1,6 +1,7 @@
 package com.depolliigor.cursomc.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class City implements Serializable {
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name="idState")
+	@JoinColumn(name="state_id")
 	private State state;
 	
 	public City() {
