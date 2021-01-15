@@ -3,7 +3,6 @@ package com.depolliigor.cursomc.domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product implements Serializable {
@@ -22,6 +23,7 @@ public class Product implements Serializable {
 	private String name;
 	private Double price;
 	
+	@JsonBackReference
 	@ManyToMany
 	@JoinTable(name="ProductCategory", joinColumns = @JoinColumn(name="idProduct"), 
 		inverseJoinColumns = @JoinColumn(name="idCategory"))
@@ -62,6 +64,7 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 
+	@JsonIgnore
 	public List<Category> getCategories() {
 		return categories;
 	}
