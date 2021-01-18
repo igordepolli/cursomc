@@ -24,7 +24,7 @@ import com.depolliigor.cursomc.domain.enums.PaymentStatus;
 import com.depolliigor.cursomc.repositories.AddressRepository;
 import com.depolliigor.cursomc.repositories.CategoryRepository;
 import com.depolliigor.cursomc.repositories.CityRepository;
-import com.depolliigor.cursomc.repositories.ClientOrderRepository;
+import com.depolliigor.cursomc.repositories.OrderRepository;
 import com.depolliigor.cursomc.repositories.ClientRepository;
 import com.depolliigor.cursomc.repositories.OrderItemRepository;
 import com.depolliigor.cursomc.repositories.PaymentRepository;
@@ -47,7 +47,7 @@ public class CursomcApplication implements CommandLineRunner {
 	@Autowired
 	private AddressRepository addressRepository;
 	@Autowired 
-	private ClientOrderRepository clientOrderRepository;
+	private OrderRepository clientOrderRepository;
 	@Autowired
 	private PaymentRepository paymentRepository;
 	@Autowired

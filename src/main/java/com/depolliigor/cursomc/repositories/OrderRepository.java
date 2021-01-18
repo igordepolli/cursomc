@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.depolliigor.cursomc.domain.Order;
 
 @Repository
-public interface ClientOrderRepository extends JpaRepository<Order, Integer> {
+public interface OrderRepository extends JpaRepository<Order, Integer> {
 	
 }
