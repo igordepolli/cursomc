@@ -14,7 +14,7 @@ public class PaymentWithCard extends Payment {
 		
 	}
 
-	public PaymentWithCard(Integer id, PaymentStatus paymentStatus, ClientOrder order, Integer numberOfInstallments) {
+	public PaymentWithCard(Integer id, PaymentStatus paymentStatus, Order order, Integer numberOfInstallments) {
 		super(id, paymentStatus, order);
 		this.numberOfInstallments = numberOfInstallments;
 	}

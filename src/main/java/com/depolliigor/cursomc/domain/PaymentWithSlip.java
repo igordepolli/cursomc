@@ -17,7 +17,7 @@ public class PaymentWithSlip extends Payment {
 		
 	}
 
-	public PaymentWithSlip(Integer id, PaymentStatus paymentStatus, ClientOrder order, Date dueDate, Date paymentDate) {
+	public PaymentWithSlip(Integer id, PaymentStatus paymentStatus, Order order, Date dueDate, Date paymentDate) {
 		super(id, paymentStatus, order);
 		this.dueDate = dueDate;
 		this.paymentDate = paymentDate;
