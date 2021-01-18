@@ -1,5 +1,6 @@
 package com.depolliigor.cursomc;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,20 @@ import com.depolliigor.cursomc.domain.Address;
 import com.depolliigor.cursomc.domain.Category;
 import com.depolliigor.cursomc.domain.City;
 import com.depolliigor.cursomc.domain.Client;
+import com.depolliigor.cursomc.domain.ClientOrder;
+import com.depolliigor.cursomc.domain.Payment;
+import com.depolliigor.cursomc.domain.PaymentWithCard;
+import com.depolliigor.cursomc.domain.PaymentWithSlip;
 import com.depolliigor.cursomc.domain.Product;
 import com.depolliigor.cursomc.domain.State;
 import com.depolliigor.cursomc.domain.enums.ClientType;
+import com.depolliigor.cursomc.domain.enums.PaymentStatus;
 import com.depolliigor.cursomc.repositories.AddressRepository;
 import com.depolliigor.cursomc.repositories.CategoryRepository;
 import com.depolliigor.cursomc.repositories.CityRepository;
+import com.depolliigor.cursomc.repositories.ClientOrderRepository;
 import com.depolliigor.cursomc.repositories.ClientRepository;
+import com.depolliigor.cursomc.repositories.PaymentRepository;
 import com.depolliigor.cursomc.repositories.ProductRepository;
 import com.depolliigor.cursomc.repositories.StateRepository;
 
@@ -36,6 +44,10 @@ public class CursomcApplication implements CommandLineRunner {
 	private ClientRepository clientRepository;
 	@Autowired
 	private AddressRepository addressRepository;
+	@Autowired 
+	private ClientOrderRepository clientOrderRepository;
+	@Autowired
+	private PaymentRepository paymentRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -88,6 +100,24 @@ public class CursomcApplication implements CommandLineRunner {
 		
 		clientRepository.saveAll(Arrays.asList(cli1));
 		addressRepository.saveAll(Arrays.asList(a1, a2));
+		
+		//----------------------------------------------------------------
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		
+		ClientOrder ord1 = new ClientOrder(null, sdf.parse("30/09/2017 10:32"), cli1, a1);
+		ClientOrder ord2 = new ClientOrder(null, sdf.parse("10/10/2017 19:35"), cli1, a2);
+		
+		Payment pyt1 = new PaymentWithCard(null, PaymentStatus.QUITADO, ord1, 6);
+		ord1.setPayment(pyt1);
+		
+		Payment pyt2 = new PaymentWithSlip(null, PaymentStatus.PENDENTE, ord2, sdf.parse("20/10/2017 00:00"), null);
+		ord2.setPayment(pyt2);
+		
+		cli1.getOrders().addAll(Arrays.asList(ord1, ord2));
+		
+		clientOrderRepository.saveAll(Arrays.asList(ord1, ord2));
+		paymentRepository.saveAll(Arrays.asList(pyt1, pyt2));
 	}
 	
 }
