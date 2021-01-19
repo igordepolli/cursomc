@@ -21,4 +21,9 @@ public class CategoryService {
 				"Categoria de ID: " + id + " não encontrada!"));
 	}
 	
+	public Category insert(Category obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
+	
 }
