@@ -137,6 +137,8 @@ public class CursomcApplication implements CommandLineRunner {
 		p3.getItems().addAll(Arrays.asList(oi2));
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3));
+		
+		System.out.println(System.currentTimeMillis());
 	}
 	
 }
