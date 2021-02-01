@@ -23,7 +23,6 @@ public class Category implements Serializable {
 	private List<Product> products = new ArrayList<>();
 	
 	public Category() {
-		
 	}
 
 	public Category(Integer id, String name) {

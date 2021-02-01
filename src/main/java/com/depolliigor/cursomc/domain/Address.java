@@ -34,7 +34,6 @@ public class Address implements Serializable {
 	private City city;
 	
 	public Address() {
-		
 	}
 
 	public Address(Integer id, String street, String number, String complement, String nbhd, String cep,

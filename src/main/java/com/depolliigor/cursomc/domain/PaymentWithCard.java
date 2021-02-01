@@ -10,8 +10,7 @@ public class PaymentWithCard extends Payment {
 	
 	private Integer numberOfInstallments;
 	
-	public PaymentWithCard() {
-		
+	public PaymentWithCard() {	
 	}
 
 	public PaymentWithCard(Integer id, PaymentStatus paymentStatus, Order order, Integer numberOfInstallments) {

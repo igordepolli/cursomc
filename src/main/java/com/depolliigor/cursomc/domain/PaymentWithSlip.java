@@ -18,7 +18,6 @@ public class PaymentWithSlip extends Payment {
 	private Date paymentDate;
 	
 	public PaymentWithSlip() {
-		
 	}
 
 	public PaymentWithSlip(Integer id, PaymentStatus paymentStatus, Order order, Date dueDate, Date paymentDate) {

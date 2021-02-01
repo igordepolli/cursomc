@@ -45,7 +45,6 @@ public class Order implements Serializable {
 	private Set<OrderItem> items = new HashSet<>();
 	
 	public Order() {
-		
 	}
 
 	public Order(Integer id, Date instant, Client client, Address deliveryAddress) {

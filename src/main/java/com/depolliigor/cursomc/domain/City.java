@@ -23,7 +23,6 @@ public class City implements Serializable {
 	private State state;
 	
 	public City() {
-		
 	}
 
 	public City(Integer id, String name, State state) {

@@ -42,7 +42,6 @@ public class Client implements Serializable {
 	private List<Order> orders = new ArrayList<>();
 	
 	public Client() {
-		
 	}
 
 	public Client(Integer id, String name, String email, String cpfOrCnpj, ClientType clientType) {

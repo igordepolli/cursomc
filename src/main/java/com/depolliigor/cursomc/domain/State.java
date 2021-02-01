@@ -25,8 +25,7 @@ public class State implements Serializable {
 	@OneToMany(mappedBy="state")
 	private List<City> cities = new ArrayList<>();
 	
-	public State() {
-		
+	public State() {	
 	}
 
 	public State(Integer id, String name) {

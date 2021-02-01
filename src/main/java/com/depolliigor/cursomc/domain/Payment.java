@@ -29,7 +29,6 @@ public abstract class Payment implements Serializable {
 	private Order order;
 	
 	public Payment() {
-		
 	}
 
 	public Payment(Integer id, PaymentStatus paymentStatus, Order order) {
