@@ -51,7 +51,6 @@ public class ClientNewDTO implements Serializable {
 	private Integer cityId;
 	
 	public ClientNewDTO() {
-		
 	}
 
 	public String getName() {

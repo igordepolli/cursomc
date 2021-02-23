@@ -25,7 +25,6 @@ public class ClientDTO implements Serializable {
 	private String email;
 	
 	public ClientDTO() {
-		
 	}
 	
 	public ClientDTO(Client obj) {

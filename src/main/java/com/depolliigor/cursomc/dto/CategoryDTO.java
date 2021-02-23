@@ -18,7 +18,6 @@ public class CategoryDTO implements Serializable {
 	private String name;
 	
 	public CategoryDTO() {
-		
 	}
 	
 	public CategoryDTO(Category obj) {
